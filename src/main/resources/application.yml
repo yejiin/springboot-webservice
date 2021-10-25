@@ -1,6 +1,7 @@
 spring:
   profiles:
     active: local # 기본환경 선택
+    include: oauth
 
 # local 환경
 ---
