@@ -1,23 +1,16 @@
 spring:
   profiles:
-    active: local # 기본환경 선택
     include: oauth
-
-# local 환경
----
-spring:
-  profiles: local
   datasource:
-    data: classpath:data-h2.sql  # 시작할때 실행시킬 script
+    data: classpath:data-h2.sql
     url: jdbc:h2:mem:testdb
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: create-drop
     defer-datasource-initialization: true
   h2:
     console:
       enabled: true
   session:
     store-type: jdbc
-
+  config:
+    use-legacy-processing: true
